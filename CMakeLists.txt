@@ -18,8 +18,12 @@ set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
 add_subdirectory("${PROJECT_SOURCE_DIR}/deps/glfw")
 target_link_libraries(IMGUITest PRIVATE glfw)
 
+
 #target_include_directories (IMGUITest PUBLIC "${PROJECT_SOURCE_DIR}/deps")
-#include_directories (${PROJECT_SOURCE_DIR}/deps)
+include_directories ("${PROJECT_SOURCE_DIR}/deps/glfw/include")
+include_directories (${PROJECT_SOURCE_DIR}/deps)
+
+
 
 # TODO: 如有需要，请添加测试并安装目标。
 FIND_PACKAGE (OpenGL REQUIRED)
