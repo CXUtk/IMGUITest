@@ -30,7 +30,7 @@ FIND_PACKAGE (OpenGL REQUIRED)
 target_link_libraries(IMGUITest PRIVATE OpenGL::GL)
 
 if (NOT WIN32)
-    list(append LIBS dl)
+    target_link_libraries(IMGUITest PRIVATE dl)
 endif()
 
 add_subdirectory ("deps/glad")
